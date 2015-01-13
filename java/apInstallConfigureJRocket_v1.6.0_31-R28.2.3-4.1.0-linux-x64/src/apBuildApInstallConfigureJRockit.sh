@@ -9,10 +9,11 @@ source apUtilities.sh
 
 # Script definitions.
 #
-AP_HOME=/opt/aproject/ap_v0.0.1/java/apInstallConfigureJRocket_v1.6.0_31-R28.2.3-4.1.0-linux-x64
+AP_HOME=/opt/asTest/automation/java/apInstallConfigureJRocket_v1.6.0_31-R28.2.3-4.1.0-linux-x64
 AP_SRC=$AP_HOME/src
 AP_BIN=$AP_HOME/bin
 AP_RELEASE=$AP_HOME/release
+AP_MEDIA=$AP_HOME/media
 AP_SCRIPT_NAME=apInstallConfigureJRocket_v1.6.0_31-R28.2.3-4.1.0-linux-x64.tar
 
 function ExecutePreScriptSteps()
@@ -86,9 +87,9 @@ function ExecuteInstallationConfigurationSteps()
 
     ApOutput "... Copying the Jrockit executable to"
     ApOutput "... $AP_BIN."
-    cp -f jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64.bin $AP_BIN
-    chown aproject:aproject $AP_BIN/jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64.bin
-    chmod 555 $AP_BIN/jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64.bin
+    cp -f $AP_MEDIA/jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64 $AP_BIN
+    chown aproject:aproject $AP_BIN/jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64
+    chmod 555 $AP_BIN/jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64
 
     ApOutput "... Copying silent.xml configuration file to"
     ApOutput "... $AP_BIN."

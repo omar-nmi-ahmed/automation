@@ -46,7 +46,7 @@ function ExecuteInstallationConfigurationSteps()
     ApOutput " Step 2 of 3: Installation/Configuration Steps."
     
     cd $AP_HOME
-    ApExecute ./jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64.bin -mode=silent -silent_xml="./silent.xml" -log=./jrockit.log
+    ApExecute ./jrockit-jdk1.6.0_31-R28.2.3-4.1.0-linux-x64 -mode=silent -silent_xml="./silent.xml" -log=./jrockit.log
     if [ $? -eq 0 ]; then
         ApOutput "Step 2 of 3: PASSED."
     else
