@@ -9,7 +9,7 @@ source apUtilities.sh
 
 # Script definitions.
 #
-AP_HOME=/opt/aproject/ap_v0.0.1/rhel/apConfigureRhel_v2.6.32-431.el6.x86_64
+AP_HOME=/opt/asTest/automation/rhel/apConfigureRhel_v2.6.32-431.el6.x86_64
 AP_SRC=$AP_HOME/src
 AP_BIN=$AP_HOME/bin
 AP_RELEASE=$AP_HOME/release

@@ -5,8 +5,8 @@ set +x
 #
 _ApOutput=on # Debug Information
 _ApExecute=false # Debug Information
-AP_EXIT_STATUS=true
 AP_HOME=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+AP_EXIT_STATUS=true
 SCRIPT_VERSION="v0.0.1"
 AP_BIN=$AP_HOME/bin
 CURRENT_RHEL_VERSION=`rpm -q --whatprovides /etc/redhat-release`
@@ -85,7 +85,11 @@ function ApRunningAsRoot()
 
 function ApExecute()
 {
-    [ "$_ApExecute" == true ] && `$@`
+#   [ "$_ApExecute" == true ] && `$@`
+    if [ "$_ApExecute" == true ]; then
+        eval $@
+    fi
+
 }
 
 function ApGetExecute()

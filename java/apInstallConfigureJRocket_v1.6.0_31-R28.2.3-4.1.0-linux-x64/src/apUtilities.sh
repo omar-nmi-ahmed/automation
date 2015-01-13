@@ -85,7 +85,11 @@ function ApRunningAsRoot()
 
 function ApExecute()
 {
-    [ "$_ApExecute" == true ] && `$@`
+#   [ "$_ApExecute" == true ] && `$@`
+    if [ "$_ApExecute" == true ]; then
+        eval $@
+    fi
+
 }
 
 function ApGetExecute()
